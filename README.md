@@ -150,15 +150,18 @@ pip install pytest
 python -m pytest -v
 ```
 
-24 个用例，全部通过子进程调用真实 CLI，覆盖：
+33 个用例，全部通过子进程调用真实 CLI，覆盖：
 
 - 正确译文 → `ERROR 0`，退出码 0
 - 篡改 `name` / 代码块 / 链接 / 行内代码 / frontmatter → 精确报错，退出码 1
 - 备份内容与原包逐字节一致
 - `scan.py` 按文本量升序、跳过 `.git`、环境变量覆盖生效
 - zip 包输入、`--no-backup`、技能名解析
+- `--help` 在 cp1252 控制台下不崩（Windows 编码回归）
 
 CI 在 Ubuntu / macOS / Windows × Python 3.9 / 3.11 / 3.13 上跑全量矩阵，并额外检查**没有引入第三方依赖**。
+
+> 这个矩阵不是摆设：首次提交时 CI 就抓到了 Windows 控制台下中文输出抛 `UnicodeEncodeError` 的问题——脚本现在会在启动时主动把 stdout 切到 UTF-8。
 
 ## 目录结构
 
@@ -172,7 +175,7 @@ skill-zh-translate/
 │   ├── prepare.py              # 定位 + 清点 + 备份
 │   ├── scan.py                 # 批量扫描 + 排序
 │   └── verify.py               # 12 项校验
-├── tests/                      # 24 个 pytest 用例
+├── tests/                      # 33 个 pytest 用例
 └── .github/workflows/ci.yml    # 三平台 × 三版本矩阵
 ```
 

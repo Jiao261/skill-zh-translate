@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from skillpaths import describe_roots, resolve_target as _platform_resolve  # noqa: E402
+from skillpaths import describe_roots, ensure_utf8_output, resolve_target as _platform_resolve  # noqa: E402
 
 TEXT_EXT = {".md", ".markdown", ".mdx", ".txt", ".rst", ".text"}
 CODE_EXT = {
@@ -232,6 +232,7 @@ def check_code(rel, cur: Path, old: Path):
 
 
 def main() -> int:
+    ensure_utf8_output()
     ap = argparse.ArgumentParser(description="技能汉化校验")
     ap.add_argument("skill_dir", help="技能目录 / SKILL.md 路径 / 已安装的技能名")
     ap.add_argument("--backup", required=True, help="prepare.py 打印的备份目录")

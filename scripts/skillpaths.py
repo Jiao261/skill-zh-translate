@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import os
+import sys
 from pathlib import Path
 
 ENV_SKILL_ROOTS = "SKILL_ZH_ROOTS"
@@ -35,6 +36,21 @@ PLUGIN_CACHE_DIRS = (
     ".workbuddy-ai/plugins/cache",
     ".claude/plugins/cache",
 )
+
+
+def ensure_utf8_output() -> None:
+    """让 stdout/stderr 支持中文输出。
+
+    Windows 控制台默认是 cp1252/cp936，打印中文会抛 UnicodeEncodeError，
+    连 `--help` 都跑不起来。这里强制切到 UTF-8，并用 replace 兜底，
+    保证最坏情况下只是字符显示异常，而不是整个脚本崩掉。
+    """
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError, OSError):
+            # 流被重定向到不支持 reconfigure 的对象时忽略
+            pass
 
 
 def _env_roots():

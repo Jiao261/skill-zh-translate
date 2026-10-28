@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from skillpaths import search_roots as _platform_roots  # noqa: E402
+from skillpaths import ensure_utf8_output, search_roots as _platform_roots  # noqa: E402
 
 CJK_RE = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]")
 TEXT_EXT = {".md", ".markdown", ".mdx", ".txt", ".rst", ".text"}
@@ -101,6 +101,7 @@ def inspect(skill: Path) -> dict:
 
 
 def main() -> int:
+    ensure_utf8_output()
     ap = argparse.ArgumentParser(description="扫描所有未汉化的技能")
     ap.add_argument("--json", dest="json_out")
     ap.add_argument("--threshold", type=float, default=0.15, help="中文占比低于该值视为待汉化")

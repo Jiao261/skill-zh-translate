@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from skillpaths import describe_roots, resolve_target as _platform_resolve  # noqa: E402
+from skillpaths import describe_roots, ensure_utf8_output, resolve_target as _platform_resolve  # noqa: E402
 
 TEXT_EXT = {".md", ".markdown", ".mdx", ".txt", ".rst", ".text"}
 CODE_EXT = {
@@ -151,6 +151,7 @@ def backup(skill: Path, backup_dir) -> Path:
 
 
 def main() -> int:
+    ensure_utf8_output()
     ap = argparse.ArgumentParser(description="技能汉化前置脚本：清点 + 备份")
     ap.add_argument("target", help="技能目录 / SKILL.md 路径 / zip 包 / 技能名")
     ap.add_argument("--json", dest="json_out", help="把机器可读报告写到该路径")

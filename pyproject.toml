@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-zh-translate"
+version = "1.1.0"
+description = "把英文 AI 技能包（Agent Skills）整体汉化为中文，并在翻译后自动校验不破坏 frontmatter、代码块与占位符"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "skill-zh-translate contributors" }]
+keywords = ["agent-skills", "i18n", "localization", "chinese", "translation", "llm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Natural Language :: Chinese (Simplified)",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-name/skill-zh-translate"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+addopts = "-ra"

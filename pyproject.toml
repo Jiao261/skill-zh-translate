@@ -19,7 +19,7 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-name/skill-zh-translate"
+Homepage = "https://github.com/Jiao261/skill-zh-translate"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

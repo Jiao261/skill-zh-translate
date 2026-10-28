@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="496" viewBox="0 0 860 496" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace">
+<defs><clipPath id="r"><rect width="860" height="496" rx="10"/></clipPath></defs>
+<g clip-path="url(#r)">
+<rect width="860" height="496" fill="#1e1e2e"/>
+<rect width="860" height="38" fill="#181825"/>
+<circle cx="20" cy="19" r="6" fill="#f38ba8"/>
+<circle cx="40" cy="19" r="6" fill="#f9e2af"/>
+<circle cx="60" cy="19" r="6" fill="#a6e3a1"/>
+<text x="842" y="24" fill="#6c7086" font-size="11.5" text-anchor="end">skill-zh-translate</text>
+<rect y="38" width="860" height="1" fill="#313244"/>
+<text x="22" y="64" fill="#89b4fa" font-size="13" font-weight="600" xml:space="preserve">$ python scripts/scan.py</text>
+<text x="22" y="87" fill="#cdd6f4" font-size="13" xml:space="preserve">技能汉化·总览   共 109 个技能：待汉化 55 / 已汉化 54</text>
+<text x="22" y="133" fill="#6c7086" font-size="13" xml:space="preserve">技能名                          文本量   中文占比  文件数 来源</text>
+<text x="22" y="156" fill="#45475a" font-size="13" xml:space="preserve">--------------------------------------------------------------</text>
+<text x="22" y="179" fill="#cdd6f4" font-size="13" xml:space="preserve">review-agent                    3KB     0.00     1  Codex</text>
+<text x="22" y="202" fill="#cdd6f4" font-size="13" xml:space="preserve">framer-motion                   3KB     0.06     1  WorkBuddy</text>
+<text x="22" y="225" fill="#cdd6f4" font-size="13" xml:space="preserve">lottie-bodymovin                4KB     0.13     1  WorkBuddy</text>
+<text x="22" y="271" fill="#a6e3a1" font-size="13" xml:space="preserve">待汉化合计文本量约 3830 KB。建议从小往大做（上面的顺序即是）。</text>
+<text x="22" y="317" fill="#89b4fa" font-size="13" font-weight="600" xml:space="preserve">$ python scripts/prepare.py framer-motion</text>
+<text x="22" y="340" fill="#cdd6f4" font-size="13" xml:space="preserve">技能目录 : ~/.claude/skills/framer-motion</text>
+<text x="22" y="363" fill="#f9e2af" font-size="13" xml:space="preserve">备份路径 : ~/.skill-zh-backups/framer-motion-20261028-140215/framer-motion</text>
+<text x="22" y="409" fill="#89b4fa" font-size="13" font-weight="600" xml:space="preserve">$ python scripts/verify.py framer-motion --backup ~/.skill-zh-backups/...</text>
+<text x="22" y="432" fill="#a6e3a1" font-size="13" font-weight="600" xml:space="preserve">ERROR 0 / WARN 0 / INFO 0</text>
+<text x="22" y="455" fill="#a6e3a1" font-size="13" font-weight="600" xml:space="preserve">=&gt; 通过。</text>
+</g>
+</svg>

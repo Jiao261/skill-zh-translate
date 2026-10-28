@@ -2,7 +2,7 @@
 
 > 把英文 AI 技能包（Agent Skills）整体汉化为中文，**并在翻译后自动证明没有把它改坏**。
 
-[![CI](https://github.com/your-name/skill-zh-translate/actions/workflows/ci.yml/badge.svg)](https://github.com/your-name/skill-zh-translate/actions/workflows/ci.yml)
+[![CI](https://github.com/Jiao261/skill-zh-translate/actions/workflows/ci.yml/badge.svg)](https://github.com/Jiao261/skill-zh-translate/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![Dependencies](https://img.shields.io/badge/dependencies-stdlib%20only-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -10,6 +10,8 @@
 [English summary](#english-summary) · [工作原理](#工作原理) · [校验项](#校验项它到底在防什么)
 
 ---
+
+![演示：扫描待汉化技能 → 备份 → 校验通过](docs/demo.svg)
 
 ## 为什么需要它
 
@@ -49,7 +51,7 @@ prepare.py            模型翻译              verify.py
 把仓库放进你所用工具的技能目录：
 
 ```bash
-git clone https://github.com/your-name/skill-zh-translate.git
+git clone https://github.com/Jiao261/skill-zh-translate.git
 
 # WorkBuddy
 cp -r skill-zh-translate ~/.workbuddy-ai/skills/
